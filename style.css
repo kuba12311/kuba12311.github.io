@@ -1,0 +1,13 @@
+body
+{
+    background: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+#ytButton
+{
+    margin: auto;
+    padding: 15px;
+    background: red;
+}
