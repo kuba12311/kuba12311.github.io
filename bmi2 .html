@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator BMI</title>
+</head>
+
+<body>
+
+<script language="JavaScript">
+function obliczBMI() {
+    var wzrost = parseFloat(document.forms[0].wzrost.value);
+    var waga = parseFloat(document.forms[0].waga.value);
+    var aktywnosc = document.forms[0].aktywnosc.value;
+    var swieta = document.forms[0].swieta.checked;
+
+    if (wzrost <= 0 || waga <= 0 || isNaN(wzrost) || isNaN(waga)) {
+        alert("Podaj poprawne wartości!");
+        return;
+    }
+
+    // Korekta wagi w zależności od aktywności
+    if (aktywnosc == "sportowiec") {
+        waga = waga - 1;
+    } else if (aktywnosc == "biurko") {
+        waga = waga + 1;
+    }
+
+    // Korekta po świętach
+    if (swieta) {
+        waga = waga - 10;
+    }
+
+    var bmi = waga / (wzrost * wzrost);
+    bmi = bmi.toFixed(2);
+
+    var opis = "";
+
+    if (bmi < 18.5) {
+        opis = "Niedowaga";
+    } else if (bmi < 25) {
+        opis = "Waga prawidłowa";
+    } else if (bmi < 30) {
+        opis = "Nadwaga";
+    } else {
+        opis = "Otyłość";
+    }
+
+    alert("Twoje BMI: " + bmi + "\n" + opis);
+}
+</script>
+
+<form name="BMIForm">
+Wzrost (w metrach): <input type="text" name="wzrost"><br><br>
+Waga (w kg): <input type="text" name="waga"><br><br>
+
+Poziom aktywności:
+<select name="aktywnosc">
+    <option value="sportowiec">Sportowiec</option>
+    <option value="normalny">Osoba przeciętnie ruszająca się</option>
+    <option value="biurko">Osoba pracująca przy biurku (mało ruchu)</option>
+</select>
+<br><br>
+
+<input type="checkbox" name="swieta">
+Jestem po świętach
+<br><br>
+
+<input type="button" value="Oblicz BMI" onclick="obliczBMI()">
+</form>
+
+</body>
+</html>
