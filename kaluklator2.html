@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[ Tytul dokumentu ]</title>
+</head>
+<body>
+<script language="JavaScript">
+
+function dodawanie() {
+var skl1=parseFloat(document.forms[0].elements[0].value);
+var skl2=parseFloat(document.forms[0].elements[1].value);
+var wynik = skl1+skl2;
+alert(wynik);
+}
+function odejmowanie() {
+var skl1=parseFloat(document.forms[0].elements[0].value);
+var skl2=parseFloat(document.forms[0].elements[1].value);
+var wynik = skl1-skl2;
+alert(wynik);
+}
+function iloraz() {
+var skl1=parseFloat(document.forms[0].elements[0].value);
+var skl2=parseFloat(document.forms[0].elements[1].value);
+if(skl2 == 0 ) alert("Nie można dzielić przez 0")
+else
+{
+var wynik = skl1/skl2;
+alert(wynik);
+}
+}
+function iloczyn() {
+var skl1=parseFloat(document.forms[0].elements[0].value);
+var skl2=parseFloat(document.forms[0].elements[1].value);
+var wynik = skl1*skl2;
+alert(wynik);
+}
+</script>
+<form name="Form">
+a=<input type="Text" name="a"><br>
+b=<input type="Text" name="b"><br>
+<input type="Button" value="Oblicz sumę" onclick="dodawanie()">
+<input type="Button" value="Oblicz różnice" onclick="odejmowanie()">
+<input type="Button" value="Oblicz iloraz" onclick="iloraz()">
+<input type="Button" value="Oblicz iloczyn" onclick="iloczyn()">
+</form>
+<hr>
+
+
+</body>
+
+</html>

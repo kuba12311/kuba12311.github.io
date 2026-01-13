@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[ Tytul dokumentu ]</title>
+</head>
+<body>
+<script language="JavaScript">
+
+function dodawanie() {
+var skl1=parseFloat(document.forms[0].elements[0].value);
+var skl2=parseFloat(document.forms[0].elements[1].value);
+var wynik = skl1+skl2;
+alert(wynik);
+}
+function odejmowanie() {
+var skl1=parseFloat(document.forms[1].elements[0].value);
+var skl2=parseFloat(document.forms[1].elements[1].value);
+var wynik = skl1-skl2;
+alert(wynik);
+}
+function iloraz() {
+var skl1=parseFloat(document.forms[2].elements[0].value);
+var skl2=parseFloat(document.forms[2].elements[1].value);
+if(skl2 == 0 ) alert("Nie można dzielić przez 0")
+else
+{
+var wynik = skl1/skl2;
+alert(wynik);
+}
+}
+function iloczyn() {
+var skl1=parseFloat(document.forms[3].elements[0].value);
+var skl2=parseFloat(document.forms[3].elements[1].value);
+var wynik = skl1*skl2;
+alert(wynik);
+}
+</script>
+<form name="Form">
+a=<input type="Text" name="a"><br>
+b=<input type="Text" name="b"><br>
+<input type="Button" value="Oblicz sumę" onclick="dodawanie()">
+</form>
+<hr>
+<form name="Form2">
+x=<input type="Text" name="jakas_wymyslona_nazwa2"><br>
+y=<input type="Text" name="jakas_wymyslona_nazwa3"><br>
+<input type="Button" value="Oblicz różnicę" onclick="odejmowanie()">
+</form>
+<form name="Form3">
+d=<input type="Text" name="d"><br>
+c=<input type="Text" name="c"><br>
+<input type="Button" value="Oblicz iloraz" onclick="iloraz()">
+</form>
+<form name="Form4">
+f=<input type="Text" name="f"><br>
+h=<input type="Text" name="h"><br>
+<input type="Button" value="Oblicz iloczyn" onclick="iloczyn()">
+</form>
+
+</body>
+
+</html>
